@@ -9,6 +9,9 @@ authors:
   - family-names: Ogi
     given-names: Tetsuro
     affiliation: "Graduate School of System Design and Management, Keio University"
+  - family-names: Yakoh
+    given-names: Takahiro
+    affiliation: "Graduate School of System Design and Management, Keio University"
 version: "1.0.0"
 date-released: 2026-04-20
 license: MIT

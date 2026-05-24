@@ -3,7 +3,7 @@
 
 This repository contains the code, data, and analysis scripts for the paper:
 
-> Muto, H., & Ogi, T. *Algorithmic Groupthink: Measuring and Mitigating Semantic Convergence in Multi-agent LLM Systems.*
+> Muto, H., & Ogi, T., & Yakoh, T. *Algorithmic Groupthink: Measuring and Mitigating Semantic Convergence in Multi-agent LLM Systems.*
 
 ## What is in this repository
 
@@ -152,7 +152,7 @@ A manuscript describing this work is currently in preparation for submission. Un
 @software{muto2026groupthink_code,
   title  = {Algorithmic Groupthink: Code and Data for Measuring and
             Mitigating Semantic Convergence in Multi-agent LLM Systems},
-  author = {Muto, Hideki and Ogi, Tetsuro},
+  author = {Muto, Hideki and Ogi, Tetsuro and Yakoh, Takahiro},
   year   = {2026},
   doi    = {10.5281/zenodo.19676464},
   url    = {https://doi.org/10.5281/zenodo.19676464}
@@ -165,7 +165,7 @@ The accompanying manuscript can be referenced as:
 @misc{muto2026groupthink,
   title  = {Algorithmic Groupthink: Measuring and Mitigating Semantic
             Convergence in Multi-agent LLM Systems},
-  author = {Muto, Hideki and Ogi, Tetsuro},
+  author = {Muto, Hideki and Ogi, Tetsuro and Yakoh, Takahiro},
   year   = {2026},
   note   = {Manuscript in preparation}
 }
