@@ -87,6 +87,29 @@ python experiments/run_control_experiments.py
 python analysis/validate_sentence_bert.py
 ```
 
+### Cross-judge replication of the quality evaluation
+
+The quality evaluation reported in the paper was originally judged by GPT-4o-mini.
+To address single-judge bias, we replicated the evaluation with Claude-Haiku 4.5
+(Anthropic) as an independent judge from a different model family on the same 45
+outputs (15 per condition: Baseline (Group), Individual, Diversity Prompt). The
+directional finding (Diversity Prompt scores higher on creativity and overall
+quality than Baseline) was confirmed; the two judges agreed most strongly on
+creativity (Pearson r = 0.60) and diverged on the practicality dimension. Full
+details are in the paper's Supplementary Section S4.
+
+```bash
+# Re-run the Claude judge (requires ANTHROPIC_API_KEY)
+python analysis/quality_evaluation_claude.py
+
+# Compare both judges and reproduce S4 numbers
+python analysis/compare_judges.py
+```
+
+Pre-computed judge outputs:
+- `data/quality_eval/gpt4o-mini_judge.json` — GPT-4o-mini ratings (n=45)
+- `data/quality_eval/claude-haiku-4-5_judge.json` — Claude-Haiku 4.5 ratings (n=45)
+
 ## Raw data format
 
 Each CSV file under `data/raw_outputs/` has the following columns:
@@ -113,6 +136,7 @@ Each CSV file under `data/raw_outputs/` has the following columns:
 | text-embedding-3-small | OpenAI | (embeddings) | — |
 | all-MiniLM-L6-v2 (Sentence-BERT) | Local | (robustness check) | — |
 | Gemini 2.5 Flash | Google | April 2026 | 1.0 |
+| Claude-Haiku 4.5 | Anthropic | June 2026 | 0.0 (judge use only) |
 
 ## Task set (20 open-ended tasks)
 
