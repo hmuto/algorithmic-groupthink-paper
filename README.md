@@ -72,8 +72,21 @@ python analysis/analyze_countermeasures.py
 ```bash
 python experiments/run_crossmodel_experiments.py --model claude-3-5-haiku
 python experiments/run_crossmodel_experiments.py --model gemini-2.0-flash
-python experiments/run_gpt4o_replication.py
+python experiments/run_gpt4o_replication.py            # GPT-4o, 5-task protocol
+python experiments/run_gpt4o_20task_replication.py     # GPT-4o, full 20-task set
 ```
+
+The 20-task GPT-4o replication extends the 5-task protocol to the full
+Experiment-1 task set, to test whether GPT-4o's directional reference-mode
+effect reaches significance with more data. It does not: the effect stays
+directional but non-significant (individual +7.8% vs. group −0.5%, Welch
+t = 0.90, p = 0.37, Cohen's d = 0.29, n = 20). Creative-writing tasks still
+converge under shared context, while reasoning tasks diverge, leaving the
+all-category average near zero. Pre-computed outputs:
+
+- `data/raw_outputs/reviewer_replications/gpt4o_20tasks_group.csv`
+- `data/raw_outputs/reviewer_replications/gpt4o_20tasks_individual.csv`
+- `data/raw_outputs/reviewer_replications/gpt4o_20tasks_summary.json`
 
 ### Control experiments
 
@@ -132,7 +145,7 @@ Each CSV file under `data/raw_outputs/` has the following columns:
 | GPT-4o-mini | OpenAI | December 2024 | 1.0 |
 | Claude-3.5-Haiku | Anthropic | January 2025 | 1.0 |
 | Gemini-2.0-Flash-Exp | Google | January 2025 | 1.0 |
-| GPT-4o | OpenAI | March 2026 | 1.0 |
+| GPT-4o | OpenAI | March 2026 (5-task); June 2026 (20-task) | 1.0 |
 | text-embedding-3-small | OpenAI | (embeddings) | — |
 | all-MiniLM-L6-v2 (Sentence-BERT) | Local | (robustness check) | — |
 | Gemini 2.5 Flash | Google | April 2026 | 1.0 |

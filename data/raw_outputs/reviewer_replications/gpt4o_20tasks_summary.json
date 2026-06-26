@@ -1,0 +1,10 @@
+{
+  "model": "gpt-4o",
+  "n_tasks": 20,
+  "individual_rel_change_pct": 7.8,
+  "group_rel_change_pct": -0.5,
+  "welch_t": 0.901,
+  "p_value": 0.3734267020096897,
+  "cohens_d": 0.292,
+  "significant": false
+}
